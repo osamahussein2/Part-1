@@ -31,18 +31,24 @@ public class Phone : MonoBehaviour
         to make it seem like the tomato has spilled over the phone as it falls down on the phone */
         if(collision.gameObject.tag == "Tomato")
         {
-            phone.SetActive(false);
-            tomatoSpilledOverPhone.SetActive(true);
-            mangoSpilledOverPhone.SetActive(false);
+            if (phone.activeInHierarchy)
+            {
+                phone.SetActive(false);
+                tomatoSpilledOverPhone.SetActive(true);
+                mangoSpilledOverPhone.SetActive(false);
+            }
         }
 
         /* If the mango tag has collided with the phone, make the mango spilled over phone sprite active
         to make it seem like the mango has spilled over the phone as it falls down on the phone */
         if (collision.gameObject.tag == "Mango")
         {
-            phone.SetActive(false);
-            tomatoSpilledOverPhone.SetActive(false);
-            mangoSpilledOverPhone.SetActive(true);
+            if (phone.activeInHierarchy)
+            {
+                phone.SetActive(false);
+                tomatoSpilledOverPhone.SetActive(false);
+                mangoSpilledOverPhone.SetActive(true);
+            }
         }
     }
 
