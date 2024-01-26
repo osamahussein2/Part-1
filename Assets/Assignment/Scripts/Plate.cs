@@ -20,7 +20,12 @@ public class Plate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Add force to the plate on each frame
+
+    }
+
+    private void FixedUpdate()
+    {
+        // Add force to the plate on every fixed frame
         rigidbody.AddForce(transform.position * plateVelocity * Time.deltaTime);
     }
 }
